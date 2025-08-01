@@ -1,0 +1,189 @@
+<div class="container-head">
+  <img class="logoima" src="assets/images/iconCateq.png" alt="Logo"> <!-- logo -->
+  <nav> <!-- MENU HORIZONTAL -->
+    <ul>
+      <li><a class="render" routerLink="/">INICIOㅤㅤㅤㅤ</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="registerIns">
+  <h1 class="tiltleRegister">Proceso de inscripción</h1>
+  <h1 class="selectMessage">Seleccione el nivel de inscripción</h1>
+
+  <form (ngSubmit)="onSubmit()" #cateForm="ngForm">
+    <select class="selectLevel" [(ngModel)]="formData.nivel" name="nivel" required>
+      <option value="1nivel">I nivel</option>
+      <option value="2nivel">II nivel</option>
+      <option value="3nivel">III nivel</option>
+      <option value="Perseverancia">Perseverancia</option>
+      <option value="juvenil">Catequesis juvenil</option>
+    </select>
+    <div class="error" *ngIf="erroresCampos['nivel']">{{ erroresCampos['nivel'] }}</div>
+
+    <!-- Datos personales -->
+    <div class="firstLevel">
+      <h1 class="dataTitle">Datos personales</h1>
+      <div class="borderli">
+        <label>Nombre Completo:</label><br><br>
+        <input placeholder="Nombre" [(ngModel)]="formData.nombre_catequizando" name="nombre_catequizando" class="labelTwo" type="text">
+        <div class="error" *ngIf="erroresCampos['nombre_catequizando']">{{ erroresCampos['nombre_catequizando'] }}</div>
+
+        <input placeholder="Primer apellido" class="labelTwo" type="text" [(ngModel)]="formData.apellido_1" name="apellido_1">
+        <div class="error" *ngIf="erroresCampos['apellido_1']">{{ erroresCampos['apellido_1'] }}</div>
+
+        <input placeholder="Segundo apellido" class="labelTwo" type="text" [(ngModel)]="formData.apellido_2" name="apellido_2">
+        <div class="error" *ngIf="erroresCampos['apellido_2']">{{ erroresCampos['apellido_2'] }}</div>
+        <br><br>
+
+        <label>Fecha de nacimiento:</label><br><br>
+        <input [(ngModel)]="formData.fecha_nac" class="labelShort" type="date" name="fecha_nac">
+        <div class="error" *ngIf="erroresCampos['fecha_nac']">{{ erroresCampos['fecha_nac'] }}</div>
+        <br><br>
+
+        <label>Edad:</label><br><br>
+        <input [(ngModel)]="formData.edad_catequizando" class="labelShort" name="edad_catequizando" type="number">
+        <div class="error" *ngIf="erroresCampos['edad_catequizando']">{{ erroresCampos['edad_catequizando'] }}</div>
+        <br><br>
+
+        <label>Lugar de procedencia (Dirección)</label><br><br>
+        <textarea [(ngModel)]="formData.direccion_catequizando" name="direccion_catequizando"></textarea>
+        <div class="error" *ngIf="erroresCampos['direccion_catequizando']">{{ erroresCampos['direccion_catequizando'] }}</div>
+        <br><br>
+      </div>
+    </div>
+
+    <!-- Información médica -->
+    <section class="firstLevel">
+      <h1 class="dataTitle">Información médica/salud</h1>
+      <div class="borderli">
+        <label>¿Tiene alguna condición de salud física o mental que debamos tener en cuenta? Especifique</label><br><br>
+        <textarea [(ngModel)]="formData.condicion" name="condicion"></textarea>
+        <div class="error" *ngIf="erroresCampos['condicion']">{{ erroresCampos['condicion'] }}</div>
+        <br><br>
+
+        <label>¿Toma medicamentos? Especifique</label><br><br>
+        <textarea [(ngModel)]="formData.medicamento" name="medicamento"></textarea>
+        <div class="error" *ngIf="erroresCampos['medicamento']">{{ erroresCampos['medicamento'] }}</div>
+        <br><br>
+
+        <label>Alergias conocidas</label><br><br>
+        <textarea [(ngModel)]="formData.alergias" name="alergias"></textarea>
+        <div class="error" *ngIf="erroresCampos['alergias']">{{ erroresCampos['alergias'] }}</div>
+        <br>
+      </div>
+    </section>
+
+    <!-- Información académica -->
+    <section class="firstLevel">
+      <h1 class="dataTitle">Información académica</h1>
+      <div class="borderli">
+        <label>Año que cursa</label><br><br>
+        <input class="labelShort" [(ngModel)]="formData.anocursa" name="anocursa">
+        <div class="error" *ngIf="erroresCampos['anocursa']">{{ erroresCampos['anocursa'] }}</div>
+      </div>
+    </section>
+
+    <!-- Información familiar -->
+    <section class="firstLevel">
+      <h1 class="dataTitle">Información familiar</h1>
+      <div class="borderli">
+        <label>Encargado 1:</label>
+        <input [(ngModel)]="formFamily[0].nombrefamiliar_catequizando" name="encargadonombre" class="inputDataFamily" placeholder="Nombre">
+        <div class="error" *ngIf="erroresCampos['familiares_0_nombre']">{{ erroresCampos['familiares_0_nombre'] }}</div>
+
+        <input [(ngModel)]="formFamily[0].apellido1_familiarcatequizando" name="encargadoapellido1" class="inputDataFamily" placeholder="Primer Apellido">
+        <div class="error" *ngIf="erroresCampos['familiares_0_apellido1']">{{ erroresCampos['familiares_0_apellido1'] }}</div>
+
+        <input [(ngModel)]="formFamily[0].apellido2_familiarcatequizando" name="encargadoapellido2" class="inputDataFamily" placeholder="Segundo Apellido">
+        <input [(ngModel)]="formFamily[0].telefono_familiarcatequizando" name="encargatelefono" class="inputDataFamily" placeholder="Número de Teléfono">
+        <div class="error" *ngIf="erroresCampos['familiares_0_telefono']">{{ erroresCampos['familiares_0_telefono'] }}</div>
+
+        <label>ㅤParentesco:ㅤ</label>
+        <select [(ngModel)]="formFamily[0].parentesco" name="parentesco" class="selectFamily">
+          <option value="abuelo(a)">Abuelo(a)</option>
+          <option value="madre">Madre</option>
+          <option value="padre">Padre</option>
+          <option value="hermano(a)">Hermano(a)</option>
+          <option value="tio(a)">Tío(a)</option>
+          <option value="otros">Otros</option>
+        </select>
+        <div class="error" *ngIf="erroresCampos['familiares_0_parentesco']">{{ erroresCampos['familiares_0_parentesco'] }}</div>
+        <br><br>
+
+        <label>Encargado 2:</label>
+        <input [(ngModel)]="formFamily[1].nombrefamiliar_catequizando" name="encargadonombre2" class="inputDataFamily" placeholder="Nombre">
+        <div class="error" *ngIf="erroresCampos['familiares_1_nombre']">{{ erroresCampos['familiares_1_nombre'] }}</div>
+
+        <input [(ngModel)]="formFamily[1].apellido1_familiarcatequizando" name="encargado2apellido1" class="inputDataFamily" placeholder="Primer Apellido">
+        <div class="error" *ngIf="erroresCampos['familiares_1_apellido1']">{{ erroresCampos['familiares_1_apellido1'] }}</div>
+
+        <input [(ngModel)]="formFamily[1].apellido2_familiarcatequizando" name="encargado2apellido2" class="inputDataFamily" placeholder="Segundo Apellido">
+        <input [(ngModel)]="formFamily[1].telefono_familiarcatequizando" name="encarga2telefono" class="inputDataFamily" placeholder="Número de Teléfono">
+        <div class="error" *ngIf="erroresCampos['familiares_1_telefono']">{{ erroresCampos['familiares_1_telefono'] }}</div>
+
+        <label>ㅤParentesco:ㅤ</label>
+        <select [(ngModel)]="formFamily[1].parentesco" name="parentesco2" class="selectFamily">
+          <option value="abuelo(a)">Abuelo(a)</option>
+          <option value="madre">Madre</option>
+          <option value="padre">Padre</option>
+          <option value="hermano(a)">Hermano(a)</option>
+          <option value="tio(a)">Tío(a)</option>
+          <option value="otros">Otros</option>
+        </select>
+        <div class="error" *ngIf="erroresCampos['familiares_1_parentesco']">{{ erroresCampos['familiares_1_parentesco'] }}</div>
+      </div>
+    </section>
+
+    <br>
+
+    <!-- Contacto de emergencia --> 
+    <section class="firstLevel">
+      <div class="borderli">
+        <label>Contacto de emergencia</label><br>
+        <hr><br>
+        <input [(ngModel)]="formEmergency.nombre_contactoemergenciacatequizando" name="nombreContactoE" class="inputDataFamily" placeholder="Nombre">
+        <div class="error" *ngIf="erroresCampos['emergency_nombre']">{{ erroresCampos['emergency_nombre'] }}</div>
+
+        <input [(ngModel)]="formEmergency.apellido1_contactoemergenciacatequizando" name="apellidocontacto" class="inputDataFamily" placeholder="Primer apellido">
+        <div class="error" *ngIf="erroresCampos['emergency_apellido1']">{{ erroresCampos['emergency_apellido1'] }}</div>
+
+        <input [(ngModel)]="formEmergency.apellido2_contactoemergenciacatequizando" name="apellido2contacto" class="inputDataFamily" placeholder="Segundo Apellido">
+        <div class="error" *ngIf="erroresCampos['emergency_apellido2']">{{ erroresCampos['emergency_apellido2'] }}</div>
+
+        <input [(ngModel)]="formEmergency.telefono_contactoemergenciacatequizando" name="telefonocontacto" class="inputDataFamily" placeholder="Teléfono">
+        <div class="error" *ngIf="erroresCampos['emergency_telefono']">{{ erroresCampos['emergency_telefono'] }}</div>
+
+        <label>ㅤParentesco:ㅤ</label>
+        <select [(ngModel)]="formEmergency.parentesco_catequizando" name="parentescoC" class="selectFamily2">
+          <option value="abuelo(a)">Abuelo(a)</option>
+          <option value="madre">Madre</option>
+          <option value="padre">Padre</option>
+          <option value="hermano(a)">Hermano(a)</option>
+          <option value="tio(a)">Tío(a)</option>
+          <option value="otros">Otros</option>
+        </select>
+        <div class="error" *ngIf="erroresCampos['emergency_parentesco']">{{ erroresCampos['emergency_parentesco'] }}</div>
+      </div>
+    </section>
+
+    <!-- Imagen según el nivel -->
+    <section class="firstLevel">  
+      <h1 class="dataTitle">Otros datos importantes</h1>
+      <div *ngIf="formData.nivel === '1nivel'" class="borderli">
+        <label>Ingrese una foto legible de la fe de bautismo</label><br><br>
+        <input (change)="onFileSelected($event)" type="file" class="fileImage"><br>
+        <div class="error" *ngIf="erroresCampos['imagen']">{{ erroresCampos['imagen'] }}</div>
+      </div>
+
+      <div *ngIf="formData.nivel === '2nivel' || formData.nivel === '3nivel' || formData.nivel === 'Perseverancia'" class="borderli">
+        <label>Ingrese una imagen legible del certificado del último año de catequesis cursado.</label><br><br>
+        <input (change)="onFileSelected($event)" type="file" class="fileImage"><br>
+        <div class="error" *ngIf="erroresCampos['imagen']">{{ erroresCampos['imagen'] }}</div>
+      </div>
+    </section>
+
+    <!-- Botón submit -->
+    <button type="submit" class="inscButton">Realizar Inscripción</button>
+  </form>
+</div>

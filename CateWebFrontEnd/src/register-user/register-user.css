@@ -1,0 +1,313 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    gap: 70px;
+    list-style-type: none; /* Quitamos las viñetas de la lista */
+	font-family: "Acme", sans-serif;
+	color: white;
+}
+
+nav li {
+    display: inline; /* Ítems del menú en una línea horizontal */ 
+    margin-right: 15px;
+
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+input::placeholder{
+  text-align: center;
+  color: #b7bec0;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+
+}
+
+textarea::placeholder{
+  text-align: center;
+  color: #b7bec0;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+}
+
+textarea{
+  padding: 10px;
+  color: #000000;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.rstInput{
+
+   padding: 10px;
+  color: #000000;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  font-size: 15px;
+
+}
+
+.inputDataFamily{
+  width: 130px;
+  font-family: "Montserrat", sans-serif;
+  height: 45px;
+}
+
+.selectFamily{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 15px;
+    text-align: center;
+    width: 92px;
+    height: 45px;
+    border-color: #b7bec0;
+}
+
+
+.selectFamily2{
+font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 15px;
+    text-align: center;
+    width: 190px;
+    height: 45px;
+    border-color: #b7bec0;
+
+}
+
+.error {
+  color: red;
+  font-size: 0.85em;
+  margin-top: 3px;
+  margin-bottom: 8px;
+}
+
+/*Register form*/
+
+.tiltleRegister{
+  font-family: "Acme", sans-serif;
+  font-weight: 100;
+  font-size: 35px;
+  font-style: normal;
+  display: flex; /*junto con la linea de abajo centra el elemento */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.selectMessage{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 15px;
+  font-weight: 300;
+  display: flex; /*junto con la linea de abajo centra el elemento */
+  justify-content: center;
+  font-style: normal;
+}
+
+.selectLevel{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 15px;
+    padding: 12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 50px auto; 
+    width: fit-content; 
+}
+
+/*form*/
+.dataTitle{
+  font-family: "Acme", sans-serif;
+  color: #1baeb6;
+  font-weight: 100;
+  font-size: 25px;
+  font-style: normal; 
+}
+
+.firstLevel{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 15px;
+  font-weight: 300;
+  display: grid;
+  justify-items: center;
+  color: #265c69;
+}
+
+.borderli{
+    border: 2px solid #b2cbcc;
+    padding: 15px;
+    border-radius: 3%;
+    width: 900px;
+}
+
+small{
+     font-size: 12px;
+     margin-left: 216px;
+     color: black;
+}
+
+input{
+    border: 1px solid #4044447a;
+    width: 240px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+textarea{
+    width: 750px;
+    height: 100px;
+    margin-left: 10px;
+     resize: vertical; 
+
+}
+
+.labelShort{
+  width: 750px;
+  padding: 10px;
+  color: #000000;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.labelTwo{
+    width: 230px;
+    padding: 10px;
+     color: #000000;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.fileImage{
+    width: 750px;
+    padding: 15px;
+}
+
+.inscButton{
+  font-family: "Acme", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-size: 22px;
+  padding: 15px;
+  background-color:  #f5f5f5;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto; 
+  width: fit-content; 
+}
+
+.inscButton:hover{
+  background-color: #69ccd1;
+}
+
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    padding-right: 20px;
+  }
+
+  .borderli {
+    width: 92%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  input,
+  .labelShort,
+  .labelTwo,
+  textarea,
+  .fileImage {
+    width: 95% !important;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .inputDataFamily {
+    width: 100%;
+  }
+
+  .selectFamily,
+  .selectFamily2 {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .inscButton {
+    font-size: 18px;
+    padding: 12px;
+    width: 90%;
+  }
+
+  .tiltleRegister,
+  .selectMessage {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .container-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logoima {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Extra: pantallas más pequeñas, menos de 480px */
+@media (max-width: 480px) {
+  .inscButton {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  nav ul {
+    gap: 10px;
+    padding-right: 10px;
+  }
+
+  .logoima {
+    width: 60px;
+    margin-top: 10px;
+    margin-left: 350px;
+  }
+
+  .borderli {
+    padding: 8px;
+  }
+
+  .tiltleRegister {
+    font-size: 20px;
+  }
+
+  a{
+    display: flex;
+    margin-left: 70px;
+    justify-content: center;
+  }
+
+
+
+
+  
+}
+
+

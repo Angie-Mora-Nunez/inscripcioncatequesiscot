@@ -1,0 +1,238 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.container-head{
+  width: 100vw;        /* Ancho igual al de la ventana del navegador */
+  max-width: 100%;      /* Mantiene el mismo ancho */
+  background-color:  #1baeb6;
+  height: 9.5vh; 
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+}
+.logoima{
+  width: 65px;
+  height: 65px;
+  margin-left: 2rem;
+}
+
+/*nabvar*/
+nav{
+ 
+  margin-top: -60px;
+  
+}
+nav ul {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    gap: 70px;
+    list-style-type: none; /* Quitamos las viñetas de la lista */
+}
+
+nav li {
+    display: inline; /* Ítems del menú en una línea horizontal */ 
+    margin-right: 15px;
+
+}
+
+/*end nabvar*/
+
+/*welcome message*/
+
+
+.welcomemessage{
+  font-family: "Acme", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  display: flex; /*junto con la linea de abajo centra el elemento */
+  justify-content: center;
+  margin-top: 130px;
+}
+
+.contactmessage{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  font-weight: 300;
+  display: flex; /*junto con la linea de abajo centra el elemento */
+  justify-content: center;
+  font-style: normal;
+}
+
+.inscButton{
+  font-family: "Acme", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 50;
+  font-size: 18px;
+  padding: 15px;
+  background-color:  #f5f5f5;
+  display: flex;
+  justify-content: center;
+  margin: 15px auto; 
+  width: fit-content; 
+  border-color: #bbc0c0cc;
+  border-radius: 10px;
+}
+
+.inscButton:hover{
+  background-color: #96a1a1;
+}
+
+a{
+  text-decoration: none;
+}
+.borderli{
+  display: flex;
+  flex-direction: column;     /* apila verticalmente */
+  justify-content: center;    /* centra verticalmente (si tiene altura) */
+  align-items: center;        /* 🔹 centra horizontalmente cada elemento */
+}
+
+
+
+
+
+.input-con-icono {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 12px;
+  background-color: #fff;
+  width: 250px; /* ajustá el ancho como prefieras */
+  height: 40px;
+}
+
+.input-con-icono i {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+.input-con-icono input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+
+
+.labelTwo{
+    width: 230px;
+    padding: 10px;
+     color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-style: italic;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    padding-right: 20px;
+  }
+
+  .borderli {
+    width: 92%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  input,
+  .labelShort,
+  .labelTwo,
+  textarea,
+  .fileImage {
+    width: 95% !important;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .inputDataFamily {
+    width: 100%;
+  }
+
+  .selectFamily,
+  .selectFamily2 {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .inscButton {
+    font-size: 18px;
+    padding: 12px;
+    width: 90%;
+  }
+
+  .tiltleRegister,
+  .selectMessage {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .container-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logoima {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Extra: pantallas más pequeñas, menos de 480px */
+@media (max-width: 480px) {
+  .inscButton {
+    font-size: 16px;
+    width: 100px;
+    margin-left: 90px;
+    
+  }
+
+  nav ul {
+    gap: 10px;
+    padding-right: 10px;
+  }
+
+  .logoima {
+    width: 60px;
+    margin-top: 10px;
+    margin-left: 350px;
+  }
+
+  .borderli {
+    padding: 8px;
+  }
+
+  .tiltleRegister {
+    font-size: 20px;
+  }
+
+  a{
+    display: flex;
+    margin-left: 70px;
+    justify-content: center;
+  }
+
+ 
+
+
+  
+}
+

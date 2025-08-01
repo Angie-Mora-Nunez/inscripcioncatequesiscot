@@ -1,0 +1,147 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.container-head{
+  width: 100vw;        /* Ancho igual al de la ventana del navegador */
+  max-width: 100%;      /* Mantiene el mismo ancho */
+  background-color:  #1baeb6;
+  height: 9.5vh; 
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+}
+.logoima{
+  width: 65px;
+  height: 65px;
+  margin-left: 2rem;
+}
+
+/*nabvar*/
+nav{
+ 
+  margin-top: -60px;
+  
+}
+nav ul {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    gap: 70px;
+    list-style-type: none; /* Quitamos las viñetas de la lista */
+}
+
+nav li {
+    display: inline; /* Ítems del menú en una línea horizontal */ 
+    margin-right: 15px;
+
+}
+
+/*end nabvar*/
+
+/*welcome message*/
+
+
+.welcomemessage{
+  font-family: "Acme", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  display: flex; /*junto con la linea de abajo centra el elemento */
+  justify-content: center;
+  margin-top: 130px;
+}
+
+.contactmessage{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 18px;
+  font-weight: 300;
+  display: flex; /*junto con la linea de abajo centra el elemento */
+  justify-content: center;
+  font-style: normal;
+}
+
+.inscButton{
+  font-family: "Acme", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-size: 22px;
+  padding: 15px;
+  background-color:  #f5f5f5;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto; 
+  width: fit-content; 
+}
+
+.inscButton:hover{
+  background-color: #69ccd1;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+.inscButton{
+  font-family: "Acme", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-size: 22px;
+  padding: 15px;
+  background-color:  #f5f5f5;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto; 
+  width: fit-content; 
+}
+
+ 
+.infoIns{
+   display: grid;
+  justify-content: center;
+}
+
+}
+
+/* Extra: pantallas más pequeñas, menos de 480px */
+@media (max-width: 480px) {
+ 
+.inscButton{
+  font-family: "Acme", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-size: 22px;
+  padding: 15px;
+  background-color:  #f5f5f5;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto; 
+  width: fit-content; 
+}
+
+ 
+.infoIns{
+   display:grid;
+  justify-content: center;
+}
+
+.welcomemessage{
+  margin-left: 10px;
+  text-align: center;
+  color: #117075;
+}
+
+.contactmessage{
+  text-align: center;
+  font-size: 15px;
+}
+
+}
+
